@@ -1,0 +1,291 @@
+/* ===== Container ===== */
+.todo-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ===== Section ===== */
+.todo-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ===== Section Header ===== */
+.todo-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  transition: background var(--transition-fast);
+  flex: 1;
+}
+
+.todo-section-header.today {
+  background: rgba(99, 102, 241, 0.06);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+.todo-section-header.past {
+  background: transparent;
+  border: none;
+  padding: var(--space-2) var(--space-3);
+}
+
+.todo-section-header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.todo-section-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.todo-section-header.today .todo-section-dot {
+  background: var(--color-primary);
+  box-shadow: 0 0 6px var(--color-primary-glow);
+}
+
+.todo-section-header.past .todo-section-dot {
+  background: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+.todo-section-label {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.todo-section-header.today .todo-section-label {
+  color: var(--color-primary-light);
+}
+
+.todo-section-header.past .todo-section-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+/* Badges */
+.todo-section-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 8px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
+}
+
+.today-badge {
+  background: var(--color-primary-glow);
+  color: var(--color-primary-light);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.past-badge {
+  background: rgba(100, 116, 139, 0.15);
+  color: var(--color-text-muted);
+  border: 1px solid rgba(100, 116, 139, 0.2);
+}
+
+/* Progress meta */
+.todo-section-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.todo-section-count {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.todo-section-done {
+  color: var(--color-success);
+  font-weight: 700;
+}
+
+.todo-section-sep {
+  color: var(--color-border);
+}
+
+.todo-section-unit {
+  color: var(--color-text-muted);
+}
+
+.todo-section-mini-bar {
+  width: 60px;
+  height: 4px;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.todo-section-mini-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+}
+
+/* ===== Section Empty ===== */
+.todo-section-empty {
+  padding: var(--space-5);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  background: var(--color-bg-card);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+/* ===== Past Section Divider ===== */
+.past-section {
+  gap: var(--space-2);
+}
+
+.past-section-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-1);
+}
+
+.past-section-divider::before,
+.past-section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.past-section-divider-label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0 var(--space-2);
+}
+
+/* ===== Past Groups ===== */
+.past-groups-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.past-group {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.past-group:hover {
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+.past-group-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  transition: background var(--transition-fast);
+}
+
+.past-group-toggle:hover {
+  background: var(--color-bg-card-hover);
+}
+
+.past-group-chevron {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  padding-right: var(--space-4);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+  display: inline-block;
+}
+
+.past-group-chevron.open {
+  transform: rotate(180deg);
+}
+
+.past-group-items {
+  padding: var(--space-2) var(--space-3) var(--space-3);
+  border-top: 1px solid var(--color-border);
+  animation: slideIn var(--transition-fast) ease;
+}
+
+.past-group-items .todo-item {
+  opacity: 0.8;
+}
+
+.past-group-items .todo-item:hover {
+  opacity: 1;
+}
+
+/* ===== Empty / Loading (from old TodoList) ===== */
+.todo-list-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-12);
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.todo-list-empty-icon {
+  font-size: 40px;
+  line-height: 1;
+}
+
+.todo-list-empty-title {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.todo-list-empty-sub {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.todo-list-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== Todo List (item container) ===== */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}

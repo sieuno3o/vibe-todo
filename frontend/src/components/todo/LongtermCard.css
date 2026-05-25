@@ -1,0 +1,100 @@
+.longterm-card {
+  position: relative;
+  padding: var(--space-5);
+  margin-bottom: var(--space-4);
+  overflow: hidden;
+  transition: all var(--transition-fast);
+  animation: slideIn var(--transition-base) ease;
+}
+
+.longterm-card:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.longterm-card.completed { opacity: 0.6; }
+
+.longterm-stripe {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+}
+
+.priority-stripe-high { background: var(--color-high); }
+.priority-stripe-medium { background: var(--color-medium); }
+.priority-stripe-low { background: var(--color-low); }
+
+.longterm-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.longterm-title-area { flex: 1; min-width: 0; }
+
+.longterm-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.longterm-card.completed .longterm-title {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+}
+
+.longterm-edit-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  width: 100%;
+}
+
+.longterm-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.longterm-memo {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  background: rgba(255,255,255,0.03);
+  border-left: 3px solid var(--color-border);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  line-height: 1.6;
+}
+
+/* Edit form */
+.longterm-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  animation: slideIn var(--transition-fast) ease;
+}
+
+.longterm-edit-dates {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.longterm-edit-dates .input-group { flex: 1; }
+
+.longterm-edit-actions {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: flex-end;
+}
+
+/* Reuse priority-btns from TodoInput.css */

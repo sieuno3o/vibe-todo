@@ -1,0 +1,28 @@
+.longterm-modal { max-width: 520px; }
+
+.longterm-modal-dates {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-3);
+}
+
+.longterm-modal-dates .input-group { flex: 1; }
+
+.longterm-dates-arrow {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+  padding-bottom: var(--space-3);
+  flex-shrink: 0;
+}
+
+.longterm-duration-preview {
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-primary-glow);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-primary-light);
+  text-align: center;
+  animation: fadeIn var(--transition-fast) ease;
+}

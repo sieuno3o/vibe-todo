@@ -1,0 +1,90 @@
+.todo-input-wrap {
+  padding: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.todo-input-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.todo-input-icon {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--color-primary-glow);
+  border-radius: 50%;
+  color: var(--color-primary-light);
+  font-size: 20px;
+  font-weight: 300;
+  flex-shrink: 0;
+}
+
+.todo-input {
+  flex: 1;
+  padding: var(--space-2) var(--space-3);
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+}
+
+.todo-input::placeholder { color: var(--color-text-muted); }
+
+.todo-input-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  animation: slideIn var(--transition-fast) ease;
+}
+
+.todo-input-option-row {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.todo-input-option-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+}
+
+.todo-input-option-group label {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.priority-btns { display: flex; gap: var(--space-2); }
+
+.priority-btn {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+}
+
+.priority-btn.active.priority-high { background: rgba(248,113,113,0.15); border-color: var(--color-high); color: var(--color-high); }
+.priority-btn.active.priority-medium { background: rgba(251,191,36,0.15); border-color: var(--color-medium); color: var(--color-medium); }
+.priority-btn.active.priority-low { background: rgba(52,211,153,0.15); border-color: var(--color-low); color: var(--color-low); }
+.priority-btn:hover { border-color: var(--color-primary); color: var(--color-primary-light); }
+
+/* Dark select */
+select.input {
+  background: var(--color-bg-card);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
