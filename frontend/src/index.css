@@ -3,9 +3,9 @@
   /* Colors */
   --color-bg: #0f0f1a;
   --color-bg-secondary: #16162a;
-  --color-bg-card: rgba(255, 255, 255, 0.04);
-  --color-bg-card-hover: rgba(255, 255, 255, 0.07);
-  --color-border: rgba(255, 255, 255, 0.08);
+  --color-bg-card: #1e1e2f; /* changed from highly transparent to opaque dark */
+  --color-bg-card-hover: #27273a;
+  --color-border: rgba(255, 255, 255, 0.12);
   --color-border-focus: rgba(99, 102, 241, 0.6);
 
   --color-primary: #6366f1;
